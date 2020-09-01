@@ -1,0 +1,32 @@
+﻿@model  List<MovieRentalWebApplication.Models.Movie>
+@{
+    ViewBag.Title = "Movies";
+}
+
+<br/>
+
+<a href="/movies/addmovie" class="btn btn-primary">New Movie</a>
+
+<br/>
+
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Genere</th>
+        <th>Release Date</th>
+        <th>Available Stock</th>
+    </tr>
+   @foreach (var item in Model)
+   {
+       <tr>
+           <td>@item.Id</td>
+           <td><a href="/movies/editmovie/@item.Id">@item.Name</a></td>
+           <td>@item.Genere</td>
+           <td>@item.ReleaseDate</td>
+           <td>@item.NumberOfStock</td>
+       </tr>
+   }
+</table>
+
+

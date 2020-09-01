@@ -1,0 +1,10 @@
+﻿@model MovieRentalWebApplication.Models.Customer
+@{
+    ViewBag.Title = "Customer Detail";
+}
+
+<div class="jumbotron">
+    <h1 class="display-3">@Model.Name</h1>
+    <hr class="my-4">
+    <p class="lead">Membership Type:</p><p class="lead">@Model.MembershipType.Name</p>
+</div>

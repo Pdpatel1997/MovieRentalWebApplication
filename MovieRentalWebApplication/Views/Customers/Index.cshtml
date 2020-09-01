@@ -1,0 +1,46 @@
+﻿@model List<MovieRentalWebApplication.Models.Customer>
+@{
+    ViewBag.Title = "All Customers";
+}
+
+    <table id="customers" class="table table-hover">
+        <tr>
+            <th>Customer Id</th>
+            <th>Customer Name</th>
+            <th>Membership Type</th>
+            <th>Delete</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td><a href="/customers/view/@item.CustomerId">@item.CustomerId</a></td>
+            <td><a href="/customers/view/@item.CustomerId">@item.Name</a></td>
+            <td>@item.MembershipType.Name</td>
+            <td><button data-customer-id="@item.CustomerId" class="btn-link js-delete" >Delete</button></td>
+        </tr>
+        }
+    </table>
+
+<script>
+    $(document).ready(function () {
+
+       
+        $("#customers").on("click",".js-delete" ,function () {
+            var button = $(this);
+            bootbox.confirm("Are You sure?", function (result) {
+                if (result) {
+                    $.ajax({
+                        url: "/api/customers/" + button.attr("data-customer-id"),
+                        method: "DELETE",
+                        success: function () {
+                            button.parent("tr").remove();
+                        }
+                    });
+                }
+
+
+            });
+        });
+        
+    });
+</script>

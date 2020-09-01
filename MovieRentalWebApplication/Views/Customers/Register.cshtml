@@ -1,0 +1,32 @@
+﻿@model MovieRentalWebApplication.Models.Customer
+@{
+    ViewBag.Title = "Register";
+}
+<h3 class="display-4"> Start Your Journey!</h3>
+
+<form class="form-group" action="~/customers/register" method="post">
+    @Html.ValidationSummary(true,"Please fix the following errors")
+    <div class="form-control">
+        <label for="Name">Name:</label>
+        <input type="text" name="Name" value=@Model.Name />
+    </div>
+    <div class="form-control">
+        <label for="MembershipType" >Membership Type:</label>
+        <select name="MembershipTypeId">
+            <option value="1">Pay as You Go</option>
+            <option value="2">Monthly</option>
+            <option value="3">Quaterly</option>
+            <option value="4">Yearly</option>
+        </select>
+    </div>
+
+    <div class="form-control">
+        <label for="DateOfBirth">Name:</label>
+        <input type="text" name="DateOfBirth" value=@Model.DateOfBirth />
+        @Html.ValidationMessageFor(s=>s.DateOfBirth)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+

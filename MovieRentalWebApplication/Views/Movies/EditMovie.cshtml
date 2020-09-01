@@ -1,0 +1,33 @@
+﻿
+@model MovieRentalWebApplication.Models.Movie
+@{
+    ViewBag.Title = "Edit Movies";
+}
+
+<form class="form-group" action="/movies/editmovie" method="post">
+
+    @Html.HiddenFor(s=>s.Id)
+
+    <div class="form-control">
+        <label>Name</label>
+        <input type="text" name="Name" value="@Model.Name" />
+    </div>
+
+    <div class="form-control">
+        <label>Genere</label>
+        <input type="text" name="Genere" value="@Model.Genere"/>
+    </div>
+
+    <div class="form-control">
+        <label>Date of Relese</label>
+        <input type="text" name="ReleaseDate" value="@Model.ReleaseDate" />
+    </div>
+
+    <div class="form-control">
+        <label>Number of Stock</label>
+        <input type="text" name="NumberOfStock" value="@Model.NumberOfStock"/>
+    </div>
+
+    <button type="submit" class="btn btn-primary"> Edit </button>
+
+</form>

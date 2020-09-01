@@ -1,0 +1,34 @@
+﻿    @model MovieRentalWebApplication.Models.Customer
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+<h3 class="display-4"> Change Profile!</h3>
+
+<form class="form-group" action="~/customers/Edit" method="post">
+    <div class="form-control">
+        <label for="Name">Name:</label>
+        <input type="text" name="Name" value=@Model.Name readonly="readonly" />
+    </div>
+    <div class="form-control">
+        <label for="MembershipType">Membership Type:</label>
+        <select name="MembershipTypeId">
+
+            <option value="1">Pay as You Go</option>
+            <option value="2">Monthly</option>
+            <option value="3">Quaterly</option>
+            <option value="4">Yearly</option>
+
+
+        </select>
+    </div>
+
+    <div class="form-control">
+        <label for="DateOfBirth">Date Of Birth:</label>
+        <input type="text" name="DateOfBirth" value=@Model.DateOfBirth />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>

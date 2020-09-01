@@ -1,0 +1,31 @@
+﻿
+@{ 
+    ViewBag.Title = "Add Movies";
+}
+
+    <form class="form-group" action="/movies/addmovie" method="post">
+
+
+        <div class="form-control">
+            <label>Name</label>
+            <input type="text" name="Name" />
+        </div>
+
+        <div class="form-control">
+            <label>Genere</label>
+            <input type="text" name="Genere" />
+        </div>
+
+        <div class="form-control">
+            <label>Date of Relese</label>
+            <input type="text" name="ReleaseDate" />
+        </div>
+
+        <div class="form-control">
+            <label>Number of Stock</label>
+            <input type="text" name="NumberOfStock" />
+        </div>
+
+        <button type="submit" class="btn btn-primary"> Add </button>
+
+    </form>
